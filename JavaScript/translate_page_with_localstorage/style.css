@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+ul {
+  position: absolute;
+  top: 10%;
+  font-size: 1.5rem;
+  list-style: circle;
+}
+
+li {
+  padding-left: 20px;
+}
+
+.top-margin-s {
+  height: 200px;
+  padding: 20px;
+}
