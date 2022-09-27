@@ -21,22 +21,22 @@ var arrLang = {
     callnow: "Call now and sign up!",
   },
 };
-
-var count = 0;
-
-function run() {
-  var language = ["tr", "de", "en"];
-  localStorage.setItem("langData", JSON.stringify(arrLang));
-  var getItem = JSON.parse(localStorage.getItem("langData"))[language[count]];
-
-  document.getElementById("home").innerText = getItem.home;
-  document.getElementById("about").innerText = getItem.about;
-  document.getElementById("contact").innerText = getItem.contact;
-  document.getElementById("gallery").innerText = getItem.gallery;
-  document.getElementById("callnow").innerText = getItem.callnow;
-
-  count++;
-  if (count >= 3) {
-    count = 0;
-  }
+function translateLang(lang) {
+  $(".lang").each(function (index, item) {
+    $(this).text(arrLang[lang][$(this).attr("key")]);
+  });
 }
+
+$(function () {
+  let stored_lang = localStorage.getItem("stored_lang");
+  if (stored_lang != null && stored_lang != undefined) {
+    lang = stored_lang;
+    translateLang(lang);
+  }
+
+  $(".translate").click(function () {
+    var lang = $(this).attr("id");
+    localStorage.setItem("stored_lang", lang);
+    translateLang(lang);
+  });
+});
