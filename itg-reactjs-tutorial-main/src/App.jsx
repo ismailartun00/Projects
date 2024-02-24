@@ -12,20 +12,24 @@ import ProductsTable from "./state/ProductsTable";
 import StateRandomNumbers from "./state/StateRandomNumbers";
 import EffectSample from "./effectSample/EffectSample";
 import Categories from "./axiosSample/Categories";
-import ProductsPage from "./axiosSample/ProductsPage";
 import CustomerPage from "./axiosSample/CustomerPage";
 import AddProduct from "./axiosSample/AddProduct";
 import AddProduct2 from "./axiosSample/AddProduct2";
 import Intro from "./muiSample/Intro";
 import GridSample from "./components/GridSample";
 import ProductsDataGrid from "./muiSample/ProductsDataGrid";
-import StateChange from "./state/StateChange";
-import CountryList from "./state/CountryList";
+import SuppliersTable from "./axiosSample/SuppliersTable";
+import Todos from "./react-query-sample/Todos";
+import CategoryPage from "./react-query-sample/CategoryPage";
+import AddCategoryPage from "./react-query-sample/AddCategoryPage";
+import Orders from "./axiosSample/Orders";
+import ProductPage from "./pages/ProductPage";
+import { FavoritesContext } from "./context/FavoritesContext";
+import Favorites from "./pages/Favorites";
 
 
 function App() {
 
-   return <CountryList/>
 
   return <>
     <h1>Site Header</h1>
@@ -35,6 +39,10 @@ function App() {
       <li><Link to='/contact'>Contact</Link></li>
       <li><Link to='/suppliers'>Suppliers</Link></li>
       <li><Link to='/stateintro'>State Intro</Link></li>
+      <li><Link to='/categories'>Categories</Link></li>
+      <li><Link to='/addcategory'>Add Category</Link></li>
+      <li><Link to='/productPage'>Products</Link></li>
+      <li><Link to='/favorites'>Favorites</Link></li>
     </ul>
 
     <Routes>
@@ -44,6 +52,10 @@ function App() {
       <Route path="/suppliers" element={<ObjectArraySample3/>} />
       <Route path="/suppliers/:id" element={<SupplierDetail/>} />
       <Route path="/stateintro" element={<StateIntro/>} />
+      <Route path="/categories" element={<CategoryPage/>} />
+      <Route path="/addcategory" element={<AddCategoryPage/>} />
+      <Route path="/productPage" element={<ProductPage/>} />
+      <Route path="/favorites" element={<Favorites/>} />
       <Route path="*" element={<NotFound/>} />
     </Routes>
     <p>Site Footer</p>
